@@ -27,6 +27,7 @@ namespace Movies.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors();
             services.AddRepositories();
             services.AddServices();
         }
@@ -40,6 +41,8 @@ namespace Movies.Api
             }
 
             app.UseRouting();
+
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
             app.UseAuthorization();
 
