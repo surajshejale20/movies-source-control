@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Movies.Repository.Infrastructure;
+using Movies.Services.Infrastructure;
 
 namespace Movies.Api
 {
@@ -25,6 +27,8 @@ namespace Movies.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddRepositories();
+            services.AddServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

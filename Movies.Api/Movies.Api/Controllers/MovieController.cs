@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Movies.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,21 @@ namespace Movies.Api.Controllers
     [ApiController]
     public class MovieController : ControllerBase
     {
+        private readonly IMovieService _movieService;
+        public MovieController(IMovieService movieService)
+        {
+            _movieService = movieService;
+        }
 
+        [Route("get-all-movies")]
+        [HttpGet]
+        public IActionResult GetAllMovies()
+        {
+            var result = _movieService.GetAllMovies();
+            if (result.Any())
+                return Ok(result);
+
+            return NoContent();
+        }
     }
 }
