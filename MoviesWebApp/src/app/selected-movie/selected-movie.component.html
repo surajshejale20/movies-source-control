@@ -1,0 +1,101 @@
+<div class="container">
+    <br>
+    
+    <div class="row">
+        <table class="table table-bordered">
+            <tr>
+                <td>
+                    Title
+                </td>
+                <td>
+                    {{movie.title}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Language
+                </td>
+                <td>
+                    {{movie.language}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Location
+                </td>
+                <td>
+                    {{movie.location}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Plot
+                </td>
+                <td>
+                    {{movie.plot}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Poster
+                </td>
+                <td>
+                    <img src="{{movie.poster}}"> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Sound Effects
+                </td>
+                <td>
+                    <li *ngFor="let item of movie.soundEffects">
+                        <span>
+                            {{item}} 
+                        </span>
+                    </li>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Stills
+                </td>
+                <td>
+                    
+                    <li *ngFor="let item of movie.stills">
+                        <img src="{{item}}">
+                    </li>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Listing Type
+                </td>
+                <td>
+                    {{movie.listingType}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    IMDB Id
+                </td>
+                <td>
+                    {{movie.imdbId}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    IMDB Rating
+                </td>
+                <td>
+                    {{movie.imdbRating}}
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    <button class="btn btn-primary"  (click)="goBack()">Back</button>
+    
+        <br>
+        <br>
+</div>
